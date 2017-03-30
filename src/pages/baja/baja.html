@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Baja</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <form (ngSubmit)="borrar()">
+    <ion-item>
+      <ion-label floating>ID</ion-label>
+      <ion-input type="number" [(ngModel)]="persona.id" name="id"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Borrar</button>
+  </form>
+
+</ion-content>

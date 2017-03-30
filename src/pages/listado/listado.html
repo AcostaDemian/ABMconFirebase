@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Listado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>  
+  
+  <ion-card *ngFor="let persona of items | async" >
+    <ion-card-header>
+      {{persona.dni}}   
+    </ion-card-header>
+
+    <ion-card-content>
+      {{persona.nombre}}
+      {{persona.apellido}}   
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

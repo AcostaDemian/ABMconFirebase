@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Buscar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>ID</ion-label>
+    <ion-input type="text" [(ngModel)]="myModel"></ion-input>
+  </ion-item>
+  
+  <button ion-button block (click)="buscar(myModel)">Buscar</button>
+  
+  <ion-card *ngIf="persona">
+    <ion-card-header>
+      {{persona.id}}
+    </ion-card-header>
+
+    <ion-card-content>
+      {{persona.nombre}}
+      {{persona.apellido}}
+      {{persona.dni}}      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

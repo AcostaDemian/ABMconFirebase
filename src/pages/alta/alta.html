@@ -1,0 +1,35 @@
+<!--
+  <input type="text" [(ngModel)]="persona.nombre" name="nombre" id="nombre"/>
+
+  <input type="text" [(ngModel)]="persona.apellido" name="apellido" id="apellido"/>
+
+  <button ion-button color="secondary" (click)="agregar(persona)">Agregar</button>
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Alta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="agregar()">
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="persona.nombre" name="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="persona.apellido" name="apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>DNI</ion-label>
+      <ion-input type="number" [(ngModel)]="persona.dni" name="dni"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Alta</button>
+  </form>
+
+</ion-content>
