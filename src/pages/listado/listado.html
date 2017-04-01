@@ -9,9 +9,9 @@
 
 <ion-content padding>  
   
-  <ion-card *ngFor="let persona of items | async" >
+  <ion-card *ngFor="let persona of personas | async" >
     <ion-card-header>
-      {{persona.dni}}   
+      {{persona.dni}} 
     </ion-card-header>
 
     <ion-card-content>

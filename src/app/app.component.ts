@@ -14,6 +14,9 @@ import { BajaPage } from '../pages/baja/baja';
 import { BuscarPage } from '../pages/buscar/buscar';
 import { ListadoPage } from '../pages/listado/listado';
 
+import * as $ from 'jquery';
+window["$"] = $;
+window["jQuery"] = $;
 
 @Component({
   templateUrl: 'app.html'

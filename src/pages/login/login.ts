@@ -12,10 +12,6 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-
   logear() {
     console.log(this.persona);
     //this.navCtrl.push(ListadoPage);

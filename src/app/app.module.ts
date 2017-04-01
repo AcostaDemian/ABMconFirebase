@@ -15,6 +15,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDV2BgWp1jls6jv44H9wu952xPHTuKe6II",
   authDomain: "abmfirebase.firebaseapp.com",
@@ -39,6 +42,7 @@ export const firebaseConfig = {
   ],
   imports: [
     IonicModule.forRoot(MyApp),
+    Ng2Bs3ModalModule, 
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
