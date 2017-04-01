@@ -6,7 +6,6 @@
 
 </ion-header>
 
-
 <ion-content padding>  
   
   <ion-card *ngFor="let persona of personas | async" >
@@ -18,6 +17,17 @@
       {{persona.nombre}}
       {{persona.apellido}}   
     </ion-card-content>
+
+    <button color="dark" ion-item (click)='modificar(persona)'>
+      <ion-icon name="ios-trash-outline" item-left></ion-icon>
+      MODIFICAR
+    </button>
+
+    <button color="danger" ion-item (click)='borrar(persona.$key)'>
+      <ion-icon name="ios-trash-outline" item-left></ion-icon>
+      BORRAR
+    </button>
+
   </ion-card>
 
 </ion-content>

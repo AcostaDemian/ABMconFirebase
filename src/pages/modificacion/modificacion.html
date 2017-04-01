@@ -9,11 +9,7 @@
 
 <ion-content padding>
 
-  <form (ngSubmit)="modificar()">
-    <ion-item>
-      <ion-label floating>ID</ion-label>
-      <ion-input type="number" [(ngModel)]="persona.id" name="id"></ion-input>
-    </ion-item>
+
     <ion-item>
       <ion-label floating>Nombre</ion-label>
       <ion-input type="text" [(ngModel)]="persona.nombre" name="nombre"></ion-input>
@@ -22,7 +18,7 @@
       <ion-label floating>Apellido</ion-label>
       <ion-input type="text" [(ngModel)]="persona.apellido" name="apellido"></ion-input>
     </ion-item>
-    <button ion-button type="submit" block>Modificar</button>
-  </form>
+    <button ion-button type="submit" (click)='modificar(persona)' block>Modificar</button>
+
 
 </ion-content>

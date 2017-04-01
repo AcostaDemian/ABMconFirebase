@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { ModalController, Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,10 +13,6 @@ import { ModificacionPage } from '../pages/modificacion/modificacion';
 import { BajaPage } from '../pages/baja/baja';
 import { BuscarPage } from '../pages/buscar/buscar';
 import { ListadoPage } from '../pages/listado/listado';
-
-import * as $ from 'jquery';
-window["$"] = $;
-window["jQuery"] = $;
 
 @Component({
   templateUrl: 'app.html'
@@ -42,9 +38,6 @@ export class MyApp {
       //{ title: 'My First List', component: ListPage },
       { title: 'Login', component: LoginPage },
       { title: 'Alta', component: AltaPage },
-      { title: 'Modificacion', component: ModificacionPage },
-      { title: 'Baja', component: BajaPage },
-      { title: 'Buscar', component: BuscarPage },
       { title: 'Listado', component: ListadoPage }
     ];
   }

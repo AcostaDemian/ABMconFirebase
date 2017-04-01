@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController, NavController, NavParams } from 'ionic-angular';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+import { ModalPage } from '../modal/modal';
+import { ModificacionPage } from '../modificacion/modificacion';
 
 @Component({
   selector: 'page-listado',
@@ -10,20 +13,26 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class ListadoPage {
   personas: FirebaseListObservable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,af: AngularFire) {
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire, public modalCtrl: ModalController) {    
     this.personas = af.database.list('/personas');
-    this.personas.subscribe(personas => {
-    // items is an array
-    personas.forEach(persona => {
-        console.log('Persona:', persona);
-      });
-    });
-    console.log(this.personas);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListadoPage');
+  modificar(persona) {
+    let personaEnviar = {nombre:persona.nombre,
+                        apellido:persona.apellido,
+                        dni:persona.dni,
+                        $key:persona.$key
+                      };
+    let myModal = this.modalCtrl.create(ModificacionPage,personaEnviar);
+    myModal.present();
   }
+
+  borrar(key) {
+    this.personas.remove(key);
+    let mensaje = {mensaje: 'SE BORRO CON EXITO'};
+    let myModal = this.modalCtrl.create(ModalPage,mensaje);
+    myModal.present();
+  }
+
 
 }
