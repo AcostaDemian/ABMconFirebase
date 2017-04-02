@@ -13,8 +13,10 @@ import { ModificacionPage } from '../modificacion/modificacion';
 export class ListadoPage {
   personas: FirebaseListObservable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire, public modalCtrl: ModalController) {    
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public af: AngularFire, public modalCtrl: ModalController) {    
     this.personas = af.database.list('/personas');
+    console.log(this.personas);
   }
 
   modificar(persona) {

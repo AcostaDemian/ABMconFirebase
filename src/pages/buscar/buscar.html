@@ -10,22 +10,21 @@
 <ion-content padding>
 
   <ion-item>
-    <ion-label floating>ID</ion-label>
-    <ion-input type="text" [(ngModel)]="myModel"></ion-input>
+    <ion-label floating>DNI a buscar</ion-label>
+    <ion-input type="text" [(ngModel)]="buscarDNI"></ion-input>
   </ion-item>
   
-  <button ion-button block (click)="buscar(myModel)">Buscar</button>
-  
-  <ion-card *ngIf="persona">
+<ng-container *ngFor="let persona of personas | async">
+  <ion-card *ngIf="persona.dni == buscarDNI">
     <ion-card-header>
-      {{persona.id}}
+      {{persona.dni}}    
     </ion-card-header>
-
     <ion-card-content>
       {{persona.nombre}}
-      {{persona.apellido}}
-      {{persona.dni}}      
+      {{persona.apellido}}  
     </ion-card-content>
   </ion-card>
+</ng-container >
+
 
 </ion-content>

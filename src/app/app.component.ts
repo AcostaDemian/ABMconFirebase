@@ -38,7 +38,8 @@ export class MyApp {
       //{ title: 'My First List', component: ListPage },
       { title: 'Login', component: LoginPage },
       { title: 'Alta', component: AltaPage },
-      { title: 'Listado', component: ListadoPage }
+      { title: 'Listado', component: ListadoPage },
+      { title: 'Buscar', component: BuscarPage }
     ];
   }
 

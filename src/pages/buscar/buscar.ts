@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
 
 @Component({
   selector: 'page-buscar',
@@ -10,22 +10,15 @@ import 'rxjs/add/operator/map';
 })
 export class BuscarPage {
   myModel: any;
-  persona: {id: string ;nombre: string, apellido: string, dni: string};
+  personas: FirebaseListObservable<any[]>;
   //persona: Array<{id: string ;nombre: string, apellido: string, dni: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    this.persona = null;
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BuscarPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, af:AngularFire) {
+    this.personas = af.database.list('/personas')
   }
 
   buscar(myModel) {
-    this.http.get('http://acostademianariel.esy.es/PPS2017/index.php/persona?id='+ this.myModel).map(res => res.json()).subscribe(data => {  
-        this.persona = data;
-    });
-    console.log(myModel);    
+
   }  
 
 }
